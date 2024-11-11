@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Input Pengguna</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Fungsi JavaScript untuk validasi input sebelum form dikirim
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            if (name == "") {
+                alert("Nama harus diisi!");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
-    <p>njb taufik</p>
-    <h1> taufik</h1>
+    <div class="container">
+        <h1>Formulir Pendaftaran Pengguna</h1>
+        <form action="/" method="POST" onsubmit="return validateForm()">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" placeholder="Masukkan nama Anda">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
+
+            <input type="submit" value="Kirim">
+        </form>
+    </div>
 </body>
 </html>
